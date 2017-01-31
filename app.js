@@ -25,4 +25,5 @@ server.post('/api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("Hello Fjord");
+    console.log("hello");
 });
