@@ -28,6 +28,11 @@ var recognizer = new builder.LuisRecognizer(model);
 var dialog = new builder.IntentDialog({ recognizers: [recognizer] });
 bot.dialog('/', dialog);
 
+// Add intent handlers
+dialog.matches('responsive design', builder.DialogAction.send("Have you tried creating a responsive design?"));
+dialog.onDefault(builder.DialogAction.send("I'm sorry I didn't understand.");
+
+
 // bot.dialog('/', function (session) {
 //     session.send("Hello Fjord");
 //     console.log("hello");
