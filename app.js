@@ -1,5 +1,6 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+var cognitiveservices = require('cognitive-services');
 
 //=========================================================
 // Bot Setup
