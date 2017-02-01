@@ -30,7 +30,7 @@ bot.dialog('/', dialog);
 
 // Add intent handlers
 dialog.matches('responsive design', builder.DialogAction.send("Have you tried creating a responsive design?"));
-dialog.onDefault(builder.DialogAction.send("I'm sorry I didn't understand.");
+dialog.onDefault(builder.DialogAction.send("I'm sorry I didn't understand."));
 
 
 // bot.dialog('/', function (session) {
