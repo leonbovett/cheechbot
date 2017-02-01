@@ -23,7 +23,12 @@ server.post('/api/messages', connector.listen());
 // Bots Dialogs
 //=========================================================
 
-bot.dialog('/', function (session) {
-    session.send("Hello Fjord");
-    console.log("hello");
-});
+var model = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/0bd654cf-6de3-4e9c-a611-096414a65eb2?subscription-key=67630055817641179c82295f202cbe19&verbose=true';
+var recognizer = new builder.LuisRecognizer(model);
+var dialog = new builder.IntentDialog({ recognizers: [recognizer] });
+bot.dialog('/', dialog);
+
+// bot.dialog('/', function (session) {
+//     session.send("Hello Fjord");
+//     console.log("hello");
+// });
