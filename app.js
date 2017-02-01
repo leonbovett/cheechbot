@@ -1,6 +1,6 @@
 var restify = require('restify');
 var builder = require('botbuilder');
-var cognitiveservices = require('cognitive-services');
+var cognitiveservices = require('botbuilder-cognitiveservices');
 
 //=========================================================
 // Bot Setup
@@ -26,13 +26,13 @@ server.post('/api/messages', connector.listen());
 
 
 
-var recognizer = new cognitiveservices.QnAMakerRecognizer({
+var recognizerQnA = new cognitiveservices.QnAMakerRecognizer({
 	knowledgeBaseId: process.env.QNA_KNOWLEDGEBASE_ID,
 	subscriptionKey: process.env.QNA_SUBSCRIPTION_KEY
 });
 
 var BasicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
-	recognizers: [recognizer],
+	recognizers: [recognizerQnA],
 	defaultMessage: 'No good match in FAQ.',
 	qnaThreshold: 0.5});
 
