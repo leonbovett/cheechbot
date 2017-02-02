@@ -20,6 +20,15 @@ var connector = new builder.ChatConnector({
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
+server.get('/chat', function page(req, res, next) {
+    var embed =
+        "<iframe style='display:block; margin-left:auto; margin-right:auto; max-width:1024px; width:100%; height:95%'" +
+        "src='https://webchat.botframework.com/embed/cheechbot?s=" +
+        process.env.QNA_SECRET +
+        "'></iframe>";
+    res.send(embed);
+})
+
 //=========================================================
 // Bots Dialogs
 //=========================================================
