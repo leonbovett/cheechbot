@@ -27,7 +27,7 @@ server.post('/api/messages', connector.listen());
 
 server.get('/chat', function page(req, res, next) {
     var body =
-        "<head><link rel='stylesheet' type='text/css' href='style.css'></head>" +
+        "<head><title>CheechBot</title><link rel='stylesheet' type='text/css' href='style.css'></head>" +
         "<div class='title-image'></div>" +
         "<iframe class='chat-frame' src='https://webchat.botframework.com/embed/cheechbot?s=" +
         process.env.QNA_SECRET +
