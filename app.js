@@ -10,7 +10,9 @@ var cognitiveservices = require('botbuilder-cognitiveservices');
 
 // Setup Restify Server
 var server = restify.createServer();
-server.pre(serveStatic('assets/img'));
+
+server.pre(serveStatic(__dirname + '/assets/img'));
+server.pre(serveStatic(__dirname + '/assets/css'));
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
@@ -25,8 +27,9 @@ server.post('/api/messages', connector.listen());
 
 server.get('/chat', function page(req, res, next) {
     var body =
-        "<iframe style='display:block; margin-left:auto; margin-right:auto; max-width:1024px; width:100%; height:95%'" +
-        "src='https://webchat.botframework.com/embed/cheechbot?s=" +
+        "<head><link rel='stylesheet' type='text/css' href='style.css'></head>" +
+        "<div class='title-image'></div>" +
+        "<iframe class='chat-frame' src='https://webchat.botframework.com/embed/cheechbot?s=" +
         process.env.QNA_SECRET +
         "'></iframe>";
     res.writeHead(200, {
