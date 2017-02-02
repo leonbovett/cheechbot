@@ -21,12 +21,17 @@ var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
 server.get('/chat', function page(req, res, next) {
-    var embed =
+    var body =
         "<iframe style='display:block; margin-left:auto; margin-right:auto; max-width:1024px; width:100%; height:95%'" +
         "src='https://webchat.botframework.com/embed/cheechbot?s=" +
         process.env.QNA_SECRET +
         "'></iframe>";
-    res.send(embed);
+    res.writeHead(200, {
+      'Content-Length': Buffer.byteLength(body),
+      'Content-Type': 'text/html'
+    });
+    res.write(body);
+    res.end();
 })
 
 //=========================================================
