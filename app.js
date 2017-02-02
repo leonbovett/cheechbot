@@ -1,4 +1,6 @@
 var restify = require('restify');
+var serveStatic = require('serve-static-restify')
+
 var builder = require('botbuilder');
 var cognitiveservices = require('botbuilder-cognitiveservices');
 
@@ -8,6 +10,7 @@ var cognitiveservices = require('botbuilder-cognitiveservices');
 
 // Setup Restify Server
 var server = restify.createServer();
+server.pre(serveStatic('assets/img'));
 server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
