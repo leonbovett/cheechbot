@@ -53,7 +53,7 @@ var recognizerQnA = new cognitiveservices.QnAMakerRecognizer({
 
 var BasicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
 	recognizers: [recognizerQnA],
-	defaultMessage: 'No good match in FAQ.',
+	defaultMessage: 'I\'m not sure about that. You need to push your design into a place where you aren\'t comfortable with your ideas. That\'s the only way that you will grow your abilities and confidence as a designer.',
 	qnaThreshold: 0.5});
 
 bot.dialog('/', BasicQnAMakerDialog);
