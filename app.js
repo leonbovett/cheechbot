@@ -28,10 +28,13 @@ server.post('/api/messages', connector.listen());
 server.get('/chat', function page(req, res, next) {
     var body =
         "<head><title>CheechBot</title><link rel='stylesheet' type='text/css' href='style.css'></head>" +
+        "<body><div class='container'>" +
         "<div class='title-image'></div>" +
         "<iframe class='chat-frame' src='https://webchat.botframework.com/embed/cheechbot?s=" +
         process.env.QNA_SECRET +
-        "'></iframe>";
+        "'></iframe>" +
+        "<h2>Made by Leon and Cheech ©2017</h2>" +
+        "</div></body>";
     res.writeHead(200, {
       'Content-Length': Buffer.byteLength(body),
       'Content-Type': 'text/html'
