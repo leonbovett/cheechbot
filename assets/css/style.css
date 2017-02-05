@@ -1,5 +1,5 @@
 body {
-    background-color: #2E85FF;
+    background-color: #2086FF;
 }
 
 .container {
@@ -17,7 +17,7 @@ h2 {
 
 .title-image {
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     margin: 1vh 0 0 0;
     background-image: url('/cheechbot_header.png');
     background-repeat: no-repeat;
@@ -29,6 +29,6 @@ h2 {
 .chat-frame {
     display: block;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     background-color: white;
 }
