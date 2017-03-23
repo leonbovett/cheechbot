@@ -33,7 +33,7 @@ server.get('/chat', function page(req, res, next) {
         "<iframe class='chat-frame' src='https://webchat.botframework.com/embed/cheechbot?s=" +
         process.env.QNA_SECRET +
         "'></iframe>" +
-        "<h2>Made by Leon and <a href='https://www.linkedin.com/in/chirrylleeryan/'>Cheech</a> &copy;2017</h2>" +
+        "<h2>Made by Leon and <a href='https://www.linkedin.com/in/chirrylleeryan/' target='_top'>Cheech</a> &copy;2017</h2>" +
         "</div></body>";
     res.writeHead(200, {
       'Content-Length': Buffer.byteLength(body),
